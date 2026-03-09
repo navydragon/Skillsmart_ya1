@@ -48,12 +48,6 @@ def run_program(
     initial_state: pure_robot.RobotState | None = None,
     transfer: TransferFunc | None = None,
 ) -> pure_robot.RobotState:
-    """
-    Стейтлес-интерпретатор:
-    - не хранит состояние внутри себя;
-    - просто прогоняет список команд через process_text_command,
-      передавая и возвращая RobotState.
-    """
 
     state = initial_state or pure_robot.RobotState(0.0, 0.0, 0.0, pure_robot.WATER)
     for command in commands:
