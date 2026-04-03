@@ -55,8 +55,6 @@ class CommandHandler:
             dist = command.dist
             if dist < 0:
                 raise ValueError("Нельзя двигаться на отрицательную дистанцию")
-            if dist > 10_000:
-                raise ValueError("Слишком большая дистанция за один шаг")
             return [Moved(dist)]
 
         if isinstance(command, Turn):
